@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Create Blog</title>
+
+    <!-- Mobile Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #1e3a8a, #9333ea);
+            color: white;
+        }
+
+        /* HEADER */
+        .header {
+            padding: 20px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 500px;
+            margin: 30px auto;
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.8s ease;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: none;
+        }
+
+        input[type="file"] {
+            background: white;
+            color: black;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #22c55e;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #16a34a;
+            transform: scale(1.03);
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #ddd;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ANIMATION */
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    ✍️ Create Blog
+</div>
+
+<div class="container">
+
+    <h2>Write Your Blog</h2>
+
+    <form method="post" action="/save_blog" enctype="multipart/form-data">
+
+        <input type="text" name="title" placeholder="Enter Blog Title" required>
+
+        <textarea name="content" placeholder="Write your blog content..." required></textarea>
+
+        <input type="file" name="image">
+
+        <button type="submit">🚀 Post Blog</button>
+
+    </form>
+
+    <a href="/dashboard">⬅ Back to Dashboard</a>
+
+</div>
+
+</body>
+
+</html>

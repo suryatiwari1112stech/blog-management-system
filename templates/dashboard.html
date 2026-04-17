@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #1e3a8a, #9333ea);
+            color: white;
+        }
+
+        /* HEADER */
+        .header {
+            padding: 20px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        /* CONTAINER */
+        .container {
+            padding: 20px;
+        }
+
+        .welcome {
+            font-size: 18px;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+        }
+
+        /* CARD */
+        .card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+            animation: slideUp 0.6s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.03);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .card a {
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+
+        .icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        /* LOGOUT */
+        .logout {
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .logout button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #ef4444;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .logout button:hover {
+            background: #dc2626;
+            transform: scale(1.05);
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(40px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    🚀 Blog Dashboard
+</div>
+
+<div class="container">
+
+    <div class="welcome">
+        Welcome, <b>{{user}}</b> 👋
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <a href="/create_blog">
+                <div class="icon">✍️</div>
+                <h3>Create Blog</h3>
+                <p>Write new post</p>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="/blogs">
+                <div class="icon">📖</div>
+                <h3>View Blogs</h3>
+                <p>Explore blogs</p>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="/my_blogs">
+                <div class="icon">🧑</div>
+                <h3>My Blogs</h3>
+                <p>Your content</p>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="logout">
+        <a href="/logout">
+            <button>Logout</button>
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>
